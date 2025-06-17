@@ -21,21 +21,29 @@ const endpoint = "https://lanciweb.github.io/demo/api/pictures/"
 
 fetch(endpoint)
     .then(res => res.json())
-    .then(data => {
-        console.log(data);
+    .then(date => {
+        console.log(date);
+        let colonne = ""
+        date.forEach(post => {
+            let { title, date, url } = post
+            // console.log(title, data, url)
+        });
+        let lyout = `<div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="pin-position">
+                                <img src="./img/pin.svg" alt="" width="40px" height="40px">
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <img class="img-fluid" src=${url}
+                                        alt="">
+                                </div>
+                                <p class="paragrafo">${title}</p>
+                                <p class="paragrafo">${data}</p>
+                            </div>
+                        </div>
+                    </div>`
     })
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
