@@ -17,9 +17,13 @@
 // Milestone 3
 // Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
 
+const endpoint = "https://lanciweb.github.io/demo/api/pictures/"
 
-
-
+fetch(endpoint)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
 
 
 
