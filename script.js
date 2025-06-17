@@ -27,7 +27,7 @@ fetch(endpoint)
         date.forEach(post => {
             let { title, date, url } = post
             console.log(title, date, url)
-            let lyout = `<div class="col-12 col-md-6 col-lg-4">
+            let layout = `<div class="col-12 col-md-6 col-lg-4">
             <div class="card">
             <div class="pin-position">
             <img src="./img/pin.svg" alt="" width="40px" height="40px">
