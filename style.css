@@ -36,6 +36,7 @@ header {
 }
 
 .pin-position {
+    z-index: 1;
     position: relative;
-    bottom: 70px;
+    top: 70px;
 }
