@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #d9d9d9;
+    background-image: url(./img/wall.png);
     padding: 30px;
     display: flex;
     justify-content: center;
@@ -19,24 +19,23 @@ header {
 .title h1 {
     font-family: "Edu TAS Beginner", cursive;
     font-size: 50px;
+    font-weight: 600;
 }
 
 .card {
-
-    width: 60%;
-    margin: 40px auto;
-}
-
-.cube1 {
-    height: 300px;
-    width: 90%;
-    margin: 20px auto;
-    margin-bottom: 10px;
-    background-color: lightgreen;
+    margin-top: 40px;
+    position: relative;
 }
 
 .pin-position {
-    z-index: 1;
-    position: relative;
-    top: 70px;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.paragrafo {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
 }
