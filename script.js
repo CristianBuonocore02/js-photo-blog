@@ -41,14 +41,14 @@ fetch(endpoint)
                             <p class="paragrafo">${date}</p>
                         </div>
                     </div>
-                </div>`;
+                    </div>`;
         });
 
         document.getElementById("layout").innerHTML = layout;
 
 
-        const imgS = document.querySelector(".imgSovraimpressione");
         const linkImg = document.querySelector(".linkImg");
+        const imgS = document.querySelector(".imgSovraimpressione");
 
 
         document.querySelectorAll(".card").forEach(card => {
@@ -58,6 +58,12 @@ fetch(endpoint)
                 imgS.style.display = "flex";
             });
         });
+
+        let cross = document.querySelector(".cross")
+        cross.addEventListener("click", () => {
+            imgS.style.display = "none";
+        })
+
 
 
 
