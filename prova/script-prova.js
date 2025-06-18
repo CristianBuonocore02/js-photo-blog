@@ -47,6 +47,7 @@ fetch(endpoint)
             document.getElementById("layout").innerHTML = layout;
 
         });
+
         const imgSovraimpressioneEl = document.querySelector(".imgSovraimpressione")
         const cardEl = document.querySelector(".card")
 
