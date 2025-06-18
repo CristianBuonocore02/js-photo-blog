@@ -17,57 +17,55 @@
 // Milestone 3
 // Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
 
-const endpoint = "https://lanciweb.github.io/demo/api/pictures/"
+const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
 
 fetch(endpoint)
     .then(res => res.json())
-    .then(date => {
-        console.log(date);
-        let layout = ""
-        date.forEach(post => {
-            let { title, date, url } = post
-            console.log(title, date, url)
-            layout += `<div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-        <div class="pin-position">
-        <img src="./img/pin.svg" alt="" width="40px" height="40px">
-        </div>
-        <div class="card-body">
-        <div>
-        <img class="img-fluid" src=${url}
-        alt="">
-        </div>
-        <p class="paragrafo">${title}</p>
-        <p class="paragrafo">${date}</p>
-        </div>
-        </div>
-        </div>`
+    .then(data => {
+        let layout = "";
 
-            //DOVE                       COSA VUOI FARE     CHE COSA                  
-            document.getElementById("layout").innerHTML = layout;
+        data.forEach(post => {
+            const { title, date, url } = post;
 
+            layout += `
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card" data-url="${url}">
+                        <div class="pin-position">
+                            <img src="./img/pin.svg" alt="" width="40px" height="40px">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <img class="img-fluid" src="${url}" alt="">
+                            </div>
+                            <p class="paragrafo">${title}</p>
+                            <p class="paragrafo">${date}</p>
+                        </div>
+                    </div>
+                </div>`;
         });
 
-        const imgSovraimpressioneEl = document.querySelector(".imgSovraimpressione")
-        const cardEl = document.querySelectorAll(".card")
+        document.getElementById("layout").innerHTML = layout;
 
-        cardEl.forEach(cardEl => {
-            cardEl.addEventListener("click", function () {
-                imgSovraimpressioneEl.style.display = "flex";
-            })
 
+        const imgS = document.querySelector(".imgSovraimpressione");
+        const linkImg = document.querySelector(".linkImg");
+
+
+        document.querySelectorAll(".card").forEach(card => {
+            card.addEventListener("click", () => {
+                const imgUrl = card.getAttribute("data-url");
+                linkImg.src = imgUrl;
+                imgS.style.display = "flex";
+            });
         });
 
 
-        //
+
+    });
 
 
 
-    })
-
-
-
-
+//DOVE                       COSA VUOI FARE     CHE COSA                  
 // const imgSovraimpressioneEl = document.querySelector(".imgSovraimpressione");
 // const cardEls = document.querySelectorAll(".card");
 
