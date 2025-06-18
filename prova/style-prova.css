@@ -32,8 +32,13 @@
 
 }
 
-col .card:hover {
-    rotate: 10%;
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: rotate(8deg) scale(1.0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -82,12 +87,6 @@ header {
 .card {
     margin-top: 40px;
     position: relative;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: rotate(8deg) scale(1.0);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .pin-position {
