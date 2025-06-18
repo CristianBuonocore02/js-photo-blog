@@ -28,36 +28,54 @@ fetch(endpoint)
             let { title, date, url } = post
             console.log(title, date, url)
             layout += `<div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-            <div class="pin-position">
-            <img src="./img/pin.svg" alt="" width="40px" height="40px">
-            </div>
-            <div class="card-body">
-            <div>
-            <img class="img-fluid" src=${url}
-            alt="">
-            </div>
-            <p class="paragrafo">${title}</p>
-            <p class="paragrafo">${date}</p>
-            </div>
-            </div>
-            </div>`
+        <div class="card">
+        <div class="pin-position">
+        <img src="./img/pin.svg" alt="" width="40px" height="40px">
+        </div>
+        <div class="card-body">
+        <div>
+        <img class="img-fluid" src=${url}
+        alt="">
+        </div>
+        <p class="paragrafo">${title}</p>
+        <p class="paragrafo">${date}</p>
+        </div>
+        </div>
+        </div>`
 
             //DOVE                       COSA VUOI FARE     CHE COSA                  
             document.getElementById("layout").innerHTML = layout;
 
         });
-        const imgSovraimpressioneEl = document.querySelector(".imgSovraimpressione")
-        const cardEl = document.querySelector(".card")
 
-        cardEl.addEventListener("click", function () {
-            imgSovraimpressioneEl.style.display = "block";
-            imgSovraimpressioneEl.style.display = "flex";
+        const imgSovraimpressioneEl = document.querySelector(".imgSovraimpressione")
+        const cardEl = document.querySelectorAll(".card")
+
+        cardEl.forEach(cardEl => {
+            cardEl.addEventListener("click", function () {
+                imgSovraimpressioneEl.style.display = "flex";
+            })
 
         });
 
+
+        //
+
+
+
     })
 
+
+
+
+// const imgSovraimpressioneEl = document.querySelector(".imgSovraimpressione");
+// const cardEls = document.querySelectorAll(".card");
+
+// cardEls.forEach(cardEl => {
+//     cardEl.addEventListener("click", function () {
+//         imgSovraimpressioneEl.style.display = "flex";
+//     });
+// });
 
 
 
