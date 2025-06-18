@@ -5,35 +5,25 @@
 }
 
 
-.sfondoGrigio {
-    border: 1px solid rgb(0, 0, 0);
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    opacity: 80%;
-    position: absolute;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .imgSovraimpressione {
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
+    position: fixed;
     z-index: 1;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: none;
 
 }
 
-col .card:hover {
-    rotate: 10%;
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: rotate(8deg) scale(1.0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -45,9 +35,9 @@ col .card:hover {
 }
 
 .imgSovraimpressione .corda {
-    position: absolute;
-    top: 10px;
-    width: 34%;
+    position: fixed;
+    top: 9px;
+    width: 400px;
     z-index: 2;
 }
 
@@ -82,12 +72,6 @@ header {
 .card {
     margin-top: 40px;
     position: relative;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: rotate(8deg) scale(1.0);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .pin-position {

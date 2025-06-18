@@ -43,11 +43,25 @@ fetch(endpoint)
             </div>
             </div>`
 
-            //DOVE                     COSA VUOI FARE      CHE COSA                  
+            //DOVE                       COSA VUOI FARE     CHE COSA                  
             document.getElementById("layout").innerHTML = layout;
+
+        });
+        const imgSovraimpressioneEl = document.querySelector(".imgSovraimpressione")
+        const cardEl = document.querySelector(".card")
+
+        cardEl.addEventListener("click", function () {
+            imgSovraimpressioneEl.style.display = "block";
+            imgSovraimpressioneEl.style.display = "flex";
+
         });
 
     })
+
+
+
+
+
 
 
 
